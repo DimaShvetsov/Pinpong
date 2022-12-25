@@ -19,7 +19,7 @@ class Player(GameSprite):
         keys = key.get_pressed()
         if keys[K_UP] and self.rect.x > 5:
             self.rect.y -= self.speed
-        if keys[K_DOWN] and self.rect.x < win_width - 80:
+        if keys[K_DOWN] and self.rect.y < win_height - 80:
             self.rect.y += self.speed
 
 
@@ -27,7 +27,7 @@ class Player(GameSprite):
         keys = key.get_pressed()
         if keys[K_w] and self.rect.x > 5:
             self.rect.y -= self.speed
-        if keys[K_s] and self.rect.x < win_width - 80:
+        if keys[K_s] and self.rect.y < win_height - 80:
             self.rect.y += self.speed
 
 
@@ -65,7 +65,7 @@ while game:
     if finish != True:
         window.fill(back)
         racket1.update_l()
-        racket1.update_r()
+        racket2.update_r()
         ball.rect.x += speed_x
         ball.rect.y += speed_y
 
